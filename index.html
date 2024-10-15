@@ -1,0 +1,144 @@
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animated Background Login Form</title>
+    <style>
+        body {
+            margin: 0;
+            height: 100vh;
+            overflow: hidden;
+            font-family: Arial, sans-serif;
+            background: #222;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #fff;
+        }
+        
+        /* Animated background */
+        @keyframes backgroundAnimation {
+            0% { background-color: #ff6b6b; }
+            50% { background-color: #ffb74d; }
+            100% { background-color: #ff6b6b; }
+        }
+        
+        .background {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            animation: backgroundAnimation 10s infinite alternate;
+            z-index: -1;
+        }
+        
+        .login-form {
+            background: rgba(0, 0, 0, 0.8);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+            width: 300px;
+            animation: fadeIn 1s ease-in-out;
+        }
+        
+        .login-form h2 {
+            margin: 0 0 20px;
+            font-size: 24px;
+            color: #fff;
+            text-align: center;
+        }
+        
+        .login-form label {
+            display: block;
+            margin: 10px 0 5px;
+            font-weight: bold;
+        }
+        
+        .login-form input[type="text"],
+        .login-form input[type="email"],
+        .login-form input[type="password"],
+        .login-form input[type="date"],
+        .login-form input[type="file"],
+        .login-form select {
+            width: calc(100% - 20px);
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            box-sizing: border-box;
+            background: #fff;
+            color: #333;
+            transition: border-color 0.3s ease;
+        }
+        
+        .login-form input[type="text"]:focus,
+        .login-form input[type="email"]:focus,
+        .login-form input[type="password"]:focus,
+        .login-form input[type="date"]:focus,
+        .login-form input[type="file"]:focus,
+        .login-form select:focus {
+            border-color: #007bff;
+            outline: none;
+        }
+        
+        .login-form input[type="submit"] {
+            background: #007bff;
+            color: #fff;
+            border: none;
+            padding: 10px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background 0.3s ease;
+        }
+        
+        .login-form input[type="submit"]:hover {
+            background: #0056b3;
+        }
+        
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="background"></div>
+    <div class="login-form">
+        <h2>Login</h2>
+        <form>
+            <label for="username">Username</label>
+            <input type="text" id="username" name="username" required>
+
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="password">Password</label>
+            <input type="password" id="password" name="password" required>
+
+            <label for="department">Department</label>
+            <select id="department" name="department" required>
+                <option value="" disabled selected>Select your department</option>
+                <option value="hr">HR</option>
+                <option value="it">IT</option>
+                <option value="marketing">Marketing</option>
+                <option value="finance">Finance</option>
+            </select>
+
+            <label for="date">Date</label>
+            <input type="date" id="date" name="date" required>
+
+            <label for="file">Upload File</label>
+            <input type="file" id="file" name="file">
+
+            <input type="submit" value="Submit">
+        </form>
+    </div>
+</body>
+</html>
